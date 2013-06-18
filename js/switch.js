@@ -37,22 +37,41 @@ function envoiSession()
 
 function envoiPalier()
 {
-   var values=$.map($('#rightTasks option'), function(e) { return e.value; });
-   var nom_palier=$('#txtNomPalier').val();
-    $.ajax({
-        url: "./insertPalier.php",
-        type: "post",
-        data: "tab="+values+"&nom_palier="+nom_palier,
-        success: function(data){
-        
-            var styleVar = 'visibility:show; margin-left:270px; margin-top:15px;';
-        
-            $('#res').attr('style',styleVar);
-            
-            $('#txtNomPalier').val('');
-            $('#rightTasks').empty();
-        }
-    });
+    var values=$.map($('#rightTasks option'), function(e) { return e.value; });
+    var nom_palier=$('#txtNomPalier').val();
+
+    // Si aucun nom n'est donné
+    if (nom_palier.length == 0)
+    {
+        alert("Attention : Vous devez donner un nom à votre palier");
+    }
+    // Si aucune session n'a été sélectionné pour le palier
+    else if (values.length == 0)
+    {
+        alert("Attention : votre palier ne contient aucune session");
+    }
+    // Sinon, on peut y aller
+    else
+    {
+         //alert("Ready to go!");
+
+        $.ajax({
+                url: "./insertPalier.php",
+                type: "post",
+                data: "tab="+values+"&nom_palier="+nom_palier,
+                success: function(data)
+                {
+                    var styleVar = 'visibility:show; margin-left:270px; margin-top:15px;';
+
+                    $('#res').attr('style',styleVar);
+
+                    $('#txtNomPalier').val('');
+                    $('#rightTasks').empty();
+                }
+            });
+    }
+
+    
     
 }
 
