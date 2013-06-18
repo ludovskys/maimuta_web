@@ -161,8 +161,8 @@ if(isset($_SESSION["connecte"]))
 			if($exist == "non present")
 			{
 				// insertion de la tache dans la base avec le lien vers le fichier 
-				//$query2 = "insert into CPS_Taches (nom_tache, Task_Type, lien_xml_tache) values ('".$name."', ".$id.", 'resultats/".$namefile.".xml')";
-				//$rs = $conn->execute($query2);
+				$query2 = "insert into CPS_Taches (nom_tache, Task_Type, lien_xml_tache) values ('".$name."', ".$id.", 'resultats/".$namefile.".xml')";
+				$rs = $conn->execute($query2);
 				echo "<span style='font-size:18px; color:black;'>Cr&eacute;ation de la t&acirc;che correctement &eacute;ffectu&eacute;e !</span>";
 				
 			}
