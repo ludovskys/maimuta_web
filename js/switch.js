@@ -79,20 +79,35 @@ function envoiBatterie()
 {
    var values=$.map($('#rightTasks option'), function(e) { return e.value; });
     var nom_batterie=$('#txtNomBatterie').val();
-    $.ajax({
-        url: "./insertBatterie.php",
-        type: "post",
-        data: "tab="+values+"&nom_batterie="+nom_batterie,
-        success: function(data){
-        
-            var styleVar = 'visibility:show; margin-left:270px; margin-top:15px;';
-        
-            $('#res').attr('style',styleVar);
-            alert(data);
-            $('#txtNomBatterie').val('');
-            $('#rightTasks').empty();
-        }
-    });
+
+    // Si aucun nom n'est donné
+    if (nom_batterie.length == 0)
+    {
+        alert("Attention : Vous devez donner un nom à votre batteire");
+    }
+    // Si aucune session n'a été sélectionné pour le palier
+    else if (values.length == 0)
+    {
+        alert("Attention : votre batterie ne contient aucune palier");
+    }
+    else
+    {
+        $.ajax({
+            url: "./insertBatterie.php",
+            type: "post",
+            data: "tab="+values+"&nom_batterie="+nom_batterie,
+            success: function(data){
+
+                var styleVar = 'visibility:show; margin-left:270px; margin-top:15px;';
+
+                $('#res').attr('style',styleVar);
+                alert(data);
+                $('#txtNomBatterie').val('');
+                $('#rightTasks').empty();
+            }
+        });
+    }
+    
     
 }
 
