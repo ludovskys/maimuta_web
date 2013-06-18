@@ -30,7 +30,7 @@
 					?>
 					</select>
 					<label for="inputTextNumberTasks1">Nombre : </label><input id="inputTextNumberTasks1" type="text" name="inputTextNumberTasks1" size="3">
-					<input class="valid" type='submit' value='Valider' onclick='' style="margin-left:30px;" >
+					<input class="valid" type='submit' value='Valider' onclick='return verifForm();' style="margin-left:30px;" >
 				</form>
 				<?php
 					
@@ -48,6 +48,41 @@
 			
 <script type="text/javaScript" src="js/admin_js.js"></script>
 <script>
+
+	function verifForm()
+	{
+		var res = false;
+		
+		var sessionTypeName = $('#inputTextSessionTypeName').val();
+
+		if (sessionTypeName.length == 0)
+		{
+			res = false;
+			alert("Attention : votre session type n'a pas de nom");
+		}
+		// On check les champs de textes "nombre" de chaque tâche
+		else
+		{
+			// On parcourt tous les champs de texte qui ont été crées
+			for (var i = 1; i <= compteur - 1; i++)
+			{
+				var currentInputTextNumberTask = $('#inputTextNumberTasks'+i).val();
+
+				// Si le nombre de tâches n'est pas renseignée
+				if (currentInputTextNumberTask.length == 0)
+				{
+					alert("Attention : un ou plusieurs paramètres sont manquants");
+					return false;
+				}
+			}
+
+			// Si on est arrivé jusqu'ici, cela veut dire que tous les paramètres sont ok
+			res = true;
+		}
+
+		return res;
+	}
+
 	var formSessionType = $('#formSessionType');
 
 	var compteur = 2;
@@ -57,7 +92,7 @@
 	var taskNameArray = ["<?php echo join("\", \"", $listeTask["nom_tache"]); ?>"];
 	var taskIdArray = ["<?php echo join("\", \"", $listeTask["id_tache"]); ?>"];
 	
-
+	// Appeller lors du click au bouton "plus"
 	function addTask()
 	{
 		formSessionType.append('</br><select style="margin-left:55px; margin-right:36px;" id="selectTasks'+compteur+'" name="selectTasks'+compteur+'""></select>');
