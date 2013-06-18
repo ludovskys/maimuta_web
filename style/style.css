@@ -1,0 +1,386 @@
+body
+{
+  background-color:white;
+  min-height:600px;
+  margin-top:0px;
+  margin-left:0px;
+  margin-right:0px;
+  font-family:arial;
+}
+header
+{
+	background-image: url("img/foret1.png");
+    background-position: 0 -190px;
+    background-repeat: no-repeat;
+    background-size: 1366px auto;
+    border-radius: 0 0 5px 5px;
+    box-shadow: -7px 5px 13px;
+    height: 150px;
+    margin: 0 0 30px;
+    padding: 5px 0 10px;
+    text-align: center;
+}
+h3
+{
+	padding-top:5px;
+	color:LemonChiffon;
+}
+hr
+{
+	margin-top:-20px;
+	color:LemonChiffon;
+}
+span
+{
+	color:black;
+}
+a
+{
+	text-decoration:none;
+	color:black;
+	padding-left:3px;
+	padding-right:3px;
+}
+a:hover
+{
+	color:grey;
+}
+img
+{
+	margin-left:10px;
+	margin-right:10px;
+}
+ul
+{
+	font-family:arial;
+	color:LemonChiffon;
+	list-style-type: none;
+}
+li
+{
+}
+li:hover
+{
+	color:darkred;
+}
+#title
+{
+    color: LemonChiffon;
+    font-family: harabara;
+    font-size: 29pt;
+    height: 119px;
+    line-height: 38px;
+    margin: 14px auto 0 10px;
+    opacity: 1;
+    padding: 10px 10px 10px 28px;
+    text-align: justify;
+    width: 350px;
+}
+#menu
+{
+	background-color: #C0C0C0;
+    border: medium none;
+    box-shadow: 0 2px 5px #503C35;
+    font-size: 13.5pt;
+    margin-bottom: 20px;
+    margin-left: -5px;
+    margin-top: -10px;
+    padding-left: 30px;
+    width: 98%;
+}
+#left-column
+{
+	width:250px;
+	height:auto;
+	margin-right:30px;
+	background-color:rgb(130, 150, 90);
+	border-radius:5px 5px 5px 5px;
+	padding-bottom:5px;
+	float:left;
+}
+#input-search
+{
+	margin-top:3px;
+	border-radius:5px 5px 5px 5px;
+	padding-left:5px;
+	font-family:arial;
+}
+#button-search
+{
+	width:40px;
+	height:26px;
+	border-radius:5px 5px 5px 5px;
+	vertical-align:-2px;
+	font-family:arial;
+	font-weight:bold;
+	cursor:pointer;
+}
+#main
+{
+	margin-left:auto;
+	margin-right:auto;
+	width:1280px;
+	margin-top:40px;
+}
+#pages
+{
+	display:block;
+	text-align:center;
+}
+#valid
+{
+	margin-top:20px;
+	margin-left:85px;
+	border-radius:5px 5px 5px 5px;
+	cursor:pointer;
+}
+#valid:hover
+{
+	background-color:lightgrey;
+}
+#box-connection
+{
+	width:320px;
+	height:140px;
+	margin-right:auto;
+	margin-left:auto;
+	margin-top:120px;
+	padding-top:10px;
+	border-style:solid;
+	border-color:#503E2B;
+	border-width:2px;
+	border-radius:10px;
+	background-color:grey;
+	box-shadow:2px 4px 13px #503E2B;
+}
+#box-connection2
+{
+	background-image: url("img/rocher2.png");
+    background-repeat: no-repeat;
+    background-size: 180px 160px;
+    border-radius: 0 0 30px 0;
+    float: right;
+    height: 100px;
+    margin-right: 0;
+    margin-top: -152px;
+    padding-top: 70px;
+    width: 180px;
+}
+#form
+{
+	margin-top:10px;
+	margin-left:30px;
+}
+#form_nom
+{
+	margin-top:20px;
+	margin-left:70px;
+}
+#good-connection
+{
+	margin-top:10px;
+	margin-left:20px;
+}
+#wrong-connection
+{
+	margin-top:30px;
+	margin-left:auto;
+	margin-right:auto;
+	color:red;
+	font-size:13pt;
+	font-family:arial;
+	width:270px;
+}
+#deconnection
+{
+	display:block;
+	margin-left:30px;
+	margin-top:15px;
+	border:1px;
+	border-style:solid;
+	border-color:white;
+	color:white;
+	border-radius:4px 4px 4px 4px;
+	padding-left:6px;
+	padding-right:6px;
+	width:95px;
+}
+#deconnection:hover
+{
+	text-decoration:none;
+	background-color:grey;
+}
+#under-title
+{
+	margin-bottom:25px;
+}
+#home_box
+{
+	margin-left:auto;
+	margin-right:auto;
+	width:900px;
+	border-radius:10px;
+	border:1px;
+	border-style:solid;
+	border-color:LemonChiffon;
+	padding-bottom:20px;
+}
+#home_table
+{
+	margin-left:50px;
+	margin-right:50px;
+}
+#type_box
+{
+	margin-left:auto;
+	margin-right:auto;
+	width:405px;
+	border-radius:10px;
+	border:1px;
+	border-style:solid;
+	border-color:LemonChiffon;
+	padding-bottom:20px;
+	padding-left:auto;
+	padding-right:auto;
+	height:100px;
+}
+#param_box
+{
+	margin-left:auto;
+	margin-right:auto;
+	width:950px;
+	border-radius:10px;
+	border:1px;
+	border-style:solid;
+	border-color:LemonChiffon;
+	padding-bottom:20px;
+	padding-left:auto;
+	padding-right:auto;
+	min-height:300px;
+}
+#type_title
+{
+	vertical-align:-50%;
+	margin-left:25px;
+	margin-bottom:-50px;
+}
+#table_param
+{
+	padding-top:25px;
+}
+#home
+{
+	height:28px;
+	width:30px;
+	cursor:pointer;
+	float:left;
+	margin-top:12px;
+	margin-left:0px;
+}
+#object
+{
+	width:200px;
+	padding-top:3px;
+	border-radius:3px;
+}
+/*********************************** CLASS ***************************************/
+.connect
+{
+	border-radius:3px 3px 3px 3px;
+	border:none;
+	margin-bottom:8px;
+	margin-left:auto;
+	margin-right:auto;
+	padding-left:5px;
+	background-color:;
+	width:250px;
+	height:25px;
+	font-size:16px;
+}
+.title
+{
+	font-size:16pt;
+	margin-top:-5px;
+	color:black;
+}
+.text
+{
+	margin-left:20px;
+	width:100px;
+	display:block;
+	float:left;
+}
+.champs
+{
+	border-radius:3px 3px 3px 3px;
+	border-color:black;
+	height:17px;
+}
+.link
+{
+	display:block;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.column
+{
+	width:450px;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.home_link
+{
+	padding:3px;
+	padding-left:5px;
+	padding-right:5px;
+	background-color:#503E2B;
+	border-radius:5px;
+	width:200px;
+	display:block;
+	color:black;
+}
+.back
+{
+	float:right;
+	margin-right:250px;
+	margin-bottom:30px;
+	color:black;
+}
+.select
+{
+	width:200px;
+	padding-top:3px;
+	border-radius:3px;
+}
+.menu-item
+{
+	font-family:arial;
+	color:LemonChiffon;
+}
+.box
+{
+	margin-left:auto;
+	margin-right:auto;
+	width:700px;
+	padding-bottom:20px;
+	padding-left:auto;
+	padding-right:auto;
+	margin-top:40px;
+}
+.valid
+{
+	margin-top:20px;
+	margin-left:200px;
+	border-radius:5px 5px 5px 5px;
+	cursor:pointer;
+}
+.liste
+{
+	width:140px;
+	border-color:grey;
+	border-radius:3px;
+}
+.switch
+{
+	cursor:pointer;
+}
