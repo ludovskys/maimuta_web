@@ -63,33 +63,48 @@
         
         function groupeTreatment()
         {
-            var typeModif=$('#typeModif').val();;
-            var url="controlDataIndivGroupe.php";
-            var arrayPost={};
-            var result="Mise a jour effectuee";
-         
-         if(typeModif=="insert")
+            // Paramètres de création d'un groupe
+            var nomGroupe = $('#txtNom_groupe').val();
+            var descriptionGroupe = $('#txtDescription_groupe').val();
+
+            // Si un des 2 champs est vide
+            if (nomGroupe.length == 0 | descriptionGroupe.length == 0)
             {
-                
-                 result="groupe cree";
+                alert("Attention : Parametre(s) manquant(s)");
             }
-         
-            arrayPost['id_groupe']=$('#id_groupe').val();
-            // arrayPost['role_utilisateur_courant']=$('#role_utilisateur_courant').val();
-            arrayPost['nom_groupe']=$('#txtNom_groupe').val();
-            arrayPost['description_groupe']=$('#txtDescription_groupe').val();
-            
-            
-            
-            arrayPost['typeModif']=$('#typeModif').val();
-            $.ajax({
-                            type: "POST",
-                            url: url,
-                            dataType:'script',
-                            data:arrayPost,
-                            success: function(data){
-                            $('#etat').html(result);
-                             location.href='groupe_list.php';
-                            }
-                        });
+            else
+            {
+                // Ready to go
+
+                var typeModif=$('#typeModif').val();;
+                var url="controlDataIndivGroupe.php";
+                var arrayPost={};
+                var result="Mise a jour effectuee";
+             
+                if(typeModif=="insert")
+                {
+                    
+                     result="groupe cree";
+                }
+             
+                arrayPost['id_groupe']=$('#id_groupe').val();
+                // arrayPost['role_utilisateur_courant']=$('#role_utilisateur_courant').val();
+                arrayPost['nom_groupe']=nomGroupe;
+                arrayPost['description_groupe']=$('#txtDescription_groupe').val();
+                
+                
+                
+                arrayPost['typeModif']=$('#typeModif').val();
+                $.ajax({
+                                type: "POST",
+                                url: url,
+                                dataType:'script',
+                                data:arrayPost,
+                                success: function(data){
+                                $('#etat').html(result);
+                                 location.href='groupe_list.php';
+                                }
+                            });
+                }
+
         }
