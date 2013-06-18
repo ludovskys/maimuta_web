@@ -29,7 +29,7 @@
 	
 					?>
 					</select>
-					<label for="inputTextNumberTasks1">Nombre : </label><input id="inputTextNumberTasks1" type="text" name="inputTextNumberTasks1" size="3">
+					<label for="inputTextNumberTasks1">Nombre : </label><input id="inputTextNumberTasks1" type="text" name="inputTextNumberTasks1" onkeypress="return validate(event);" size="3">
 					<input class="valid" type='submit' value='Valider' onclick='return verifForm();' style="margin-left:30px;" >
 				</form>
 				<?php
@@ -48,6 +48,30 @@
 			
 <script type="text/javaScript" src="js/admin_js.js"></script>
 <script>
+
+	// Contrôle des input texts, on s'assure de ne pouvoir donner que des chiffres
+	function validate(evt) {
+		var theEvent = evt || window.event;
+		var key = theEvent.keyCode || theEvent.which;
+
+		// Si touche back space ou flèche droite/gauche
+		if (key == 8 || key == 37 || key == 38)
+		{
+			// On effectue le traitement normal
+			return;
+		}
+
+		key = String.fromCharCode( key );
+
+		var regex = /[0-9]|\./;
+
+		if( !regex.test(key)) 
+		{
+			theEvent.returnValue = false;
+			if(theEvent.preventDefault) theEvent.preventDefault();
+		}
+	}
+
 
 	function verifForm()
 	{
@@ -96,7 +120,7 @@
 	function addTask()
 	{
 		formSessionType.append('</br><select style="margin-left:55px; margin-right:36px;" id="selectTasks'+compteur+'" name="selectTasks'+compteur+'""></select>');
-		formSessionType.append('<label for="inputTextNumberTasks'+compteur+'">Nombre : </label><input id="inputTextNumberTasks'+compteur+'" type="text" name="inputTextNumberTasks'+compteur+'" size="3"> </br>');
+		formSessionType.append('<label for="inputTextNumberTasks'+compteur+'">Nombre : </label><input id="inputTextNumberTasks'+compteur+'" type="text" name="inputTextNumberTasks'+compteur+'" onkeypress="return validate(event);" size="3"> </br>');
 
 		hiddenCompteur.val(compteur);
 

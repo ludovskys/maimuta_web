@@ -640,28 +640,4 @@ function verifForm()
 	return res;
 }
 
-// Contrôle des input texts, on s'assure de ne pouvoir donner que des chiffres
-function validate(evt) {
-	var theEvent = evt || window.event;
-	var key = theEvent.keyCode || theEvent.which;
-
-	// Si touche back space ou flèche droite/gauche
-	if (key == 8 || key == 37 || key == 38)
-	{
-		// On effectue le traitement normal
-		return;
-	}
-
-	key = String.fromCharCode( key );
-
-	var regex = /[0-9]|\./;
-
-	if( !regex.test(key)) 
-	{
-		theEvent.returnValue = false;
-		if(theEvent.preventDefault) theEvent.preventDefault();
-	}
-}
-
-
 </script>
