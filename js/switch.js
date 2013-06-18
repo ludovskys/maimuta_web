@@ -26,13 +26,13 @@ function envoiSession()
         type: "post",
         data: "tab="+values,
         success: function(data){
-		
-		    var styleVar = 'visibility:show; margin-left:270px; margin-top:15px;';
-		
-			$('#res').attr('style',styleVar);
+        
+            var styleVar = 'visibility:show; margin-left:270px; margin-top:15px;';
+        
+            $('#res').attr('style',styleVar);
         }
     });
-	
+    
 }
 
 function envoiPalier()
@@ -44,16 +44,16 @@ function envoiPalier()
         type: "post",
         data: "tab="+values+"&nom_palier="+nom_palier,
         success: function(data){
-		
-		    var styleVar = 'visibility:show; margin-left:270px; margin-top:15px;';
-		
-			$('#res').attr('style',styleVar);
-			
-			$('#txtNomPalier').val('');
-			$('#rightTasks').empty();
+        
+            var styleVar = 'visibility:show; margin-left:270px; margin-top:15px;';
+        
+            $('#res').attr('style',styleVar);
+            
+            $('#txtNomPalier').val('');
+            $('#rightTasks').empty();
         }
     });
-	
+    
 }
 
 function envoiBatterie()
@@ -65,16 +65,16 @@ function envoiBatterie()
         type: "post",
         data: "tab="+values+"&nom_batterie="+nom_batterie,
         success: function(data){
-		
-		    var styleVar = 'visibility:show; margin-left:270px; margin-top:15px;';
-		
-			$('#res').attr('style',styleVar);
-			
-			$('#txtNomBatterie').val('');
-			$('#rightTasks').empty();
+        
+            var styleVar = 'visibility:show; margin-left:270px; margin-top:15px;';
+        
+            $('#res').attr('style',styleVar);
+            alert(data);
+            $('#txtNomBatterie').val('');
+            $('#rightTasks').empty();
         }
     });
-	
+    
 }
 
 
@@ -83,10 +83,10 @@ function reset()
     var defaultRight=" ";
             
     $('#rightTasks').html(defaultRight);
-	
-	var styleVar = 'visibility:hidden; margin-left:270px; margin-top:15px;';
+    
+    var styleVar = 'visibility:hidden; margin-left:270px; margin-top:15px;';
 
-	$('#res').attr('style',styleVar);
-	
+    $('#res').attr('style',styleVar);
+    
 }
 
