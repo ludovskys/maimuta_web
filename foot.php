@@ -4,13 +4,13 @@
   
   var pathname = window.location.pathname;
   
-  if(pathname == "/Interface_primatologue/cps_new_tache.php")
+  if(pathname == "/maimuta_web/cps_new_tache.php")
   {
 	  $(document).ready(function() {
 		recupData();
 	});
   }
-  else if(pathname == "/Interface_primatologue/batterie_groupe.php" )
+  else if(pathname == "/maimuta_web/batterie_groupe.php" )
   {
      $(document).ready(function() {
 		getAllGroupes();
