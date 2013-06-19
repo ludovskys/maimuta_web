@@ -195,7 +195,7 @@ function file(fichier)
             {
                 // Un ou plusieurs paramètres manquants
 
-                alert("Un ou plusieurs champs sont manquants");
+                alert("Attention : Vous devez renseigner tous les champs.");
             }
             else
             {   

@@ -634,7 +634,7 @@ function verifForm()
 
 	if (!res)
 	{
-		alert("Un ou plusieurs paramètres sont manquants");
+		alert("Attention : Vous devez renseigner tous les champs.");
 	}
 
 	return res;

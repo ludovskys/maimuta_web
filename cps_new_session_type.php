@@ -82,7 +82,7 @@
 		if (sessionTypeName.length == 0)
 		{
 			res = false;
-			alert("Attention : votre session type n'a pas de nom");
+			alert("Attention : Vous devez renseigner tous les champs.");
 		}
 		// On check les champs de textes "nombre" de chaque tâche
 		else
@@ -95,7 +95,7 @@
 				// Si le nombre de tâches n'est pas renseignée
 				if (currentInputTextNumberTask.length == 0)
 				{
-					alert("Attention : un ou plusieurs paramètres sont manquants");
+					alert("Attention : Vous devez renseigner tous les champs.");
 					return false;
 				}
 			}

@@ -48,7 +48,7 @@ function envoiPalier()
     // Si aucune session n'a été sélectionné pour le palier
     else if (values.length == 0)
     {
-        alert("Attention : votre palier ne contient aucune session");
+        alert("Attention : Votre palier ne contient aucune session");
     }
     // Sinon, on peut y aller
     else
@@ -88,7 +88,7 @@ function envoiBatterie()
     // Si aucune session n'a été sélectionné pour le palier
     else if (values.length == 0)
     {
-        alert("Attention : votre batterie ne contient aucune palier");
+        alert("Attention : Votre batterie ne contient aucune palier");
     }
     else
     {

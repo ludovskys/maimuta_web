@@ -70,7 +70,7 @@
             // Si un des 2 champs est vide
             if (nomGroupe.length == 0 | descriptionGroupe.length == 0)
             {
-                alert("Attention : Parametre(s) manquant(s)");
+                alert("Attention : Vous devez renseigner tous les champs.");
             }
             else
             {
