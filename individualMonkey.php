@@ -44,7 +44,7 @@ function getId()
 					</tr>
 					<tr>
 						<td>Date de naissance : </td>
-						<td><input type="text" value="" id="txtDateNaissance_singe" name="dateNaissance_singe"></td>
+						<td><input type="text" value="" id="txtDateNaissance_singe" name="dateNaissance_singe" size="7"></td>
 						<td id="dateNaissance_singe" width="500"></td>
 					</tr>
 					<tr>
@@ -59,7 +59,7 @@ function getId()
 					</tr>
 					<tr>
 						<td>Type : </td>
-						<td><input type="text" value="" id="txtType_singe" name="type_singe"></td>
+						<td><input type="text" value="" id="txtType_singe" name="type_singe" size="1"></td>
 						<td id="type_singe"></td>
 					</tr>
 					<tr>
@@ -73,8 +73,8 @@ function getId()
 						<td id="puce_singe_droit"></td>
 					</tr>
 					<tr>
-						<td>Desc. : </td>
-						<td><input type="text" value="" id="txtDesc_singe" name="descriptif_singe"></td>
+						<td>Description : </td>
+						<td><textarea value="" id="txtDesc_singe" name="descriptif_singe"></textarea></td>
 						<td id="descriptif_singe"></td>
 					</tr>
 					<tr>
