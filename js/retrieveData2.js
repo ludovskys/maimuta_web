@@ -18,12 +18,5 @@ function recupData2(id,format,query)
 	var select = document.getElementById('object');
 	var span = document.getElementById('resultat');
 	
-	//alert(taille);
-	if(taille == 0)
-	{
-		select.style.display = "none";
-		resultat.style.display = "block";
-	}
-	
 	
 }
