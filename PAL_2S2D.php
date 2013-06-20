@@ -210,7 +210,7 @@ else
 <m_iStimulusSet>".$elem[2]."</m_iStimulusSet>
 <m_iTrialsToAvoidRepeatsOver>5</m_iTrialsToAvoidRepeatsOver>
 <m_strEmptyBoxObject>univcam_IDED_shape_1</m_strEmptyBoxObject>
-<m_strTrialScheme>".$elem[4]."S."$elem[9]".D</m_strTrialScheme>
+<m_strTrialScheme>".$elem[4]."S.".$elem[9].".D</m_strTrialScheme>
 <m_viUserStimulusOrder></m_viUserStimulusOrder>
 <m_vlocationsets>
 <m_vlocationsets_NumElements>7</m_vlocationsets_NumElements>
