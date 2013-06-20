@@ -10,15 +10,21 @@ function resituteInfos($connexion,$id)
     $roles=null;
     $monkey = get_monkey($connexion, $id);
     $all_groupes=getAllGroupes($connexion);
+    $all_types=getAllTypes($connexion);
     $monkeyGroupe=getMonkeyGroupe($connexion, $id);
+    $monkeyType=getMonkeyType($connexion, $id);
 
     $data.="$('#groupe_singe').empty();";
     $data.="$('#groupe_singe').append('<option id=\"0\" value=\"0\">- - - - - - - - -</option>');";
+	
+	$data.="$('#txtType_singe').empty();";
+    $data.="$('#txtType_singe').append('<option id=\"0\" value=\"0\">- - - - - - - - -</option>');";
 
     $data.='$("#txtNom_singe").val("'.$monkey[0].'");';
     $data.='$("#txtDateNaissance_singe").val("'.$monkey[1].'");';
     
     $tmpdata="";
+    $tmpdata2="";
 
     while(!$all_groupes->EOF) 
     { 
@@ -35,10 +41,27 @@ function resituteInfos($connexion,$id)
         $all_groupes->MoveNext();
 
     }
+	
+	while(!$all_types->EOF) 
+    { 
+        if($monkeyType[0]==$all_types[0])
+        {
+            $tmpdata2.="$('#txtType_singe').append('<option selected=\'selected\'  id=\'$all_types[0]\' value=\'$all_types[0]\'>$all_types[1]</option>');";
+
+        }
+        else
+        {
+            $tmpdata2.="$('#txtType_singe').append('<option  id=\'$all_types[0]\' value=\'$all_types[0]\'>$all_types[1]</option>');";
+        }
+
+        $all_types->MoveNext();
+
+    }
 
     $data.=$tmpdata;
+    $data.=$tmpdata2;
 
-    $data.='$("#txtType_singe").val('.$monkey[2].');';
+    //$data.='$("#txtType_singe").val('.$monkey[2].');';
     $data.='$("#txtLieuNaissance_singe").val("'.$monkey[4].'");';
     $data.='$("input[name=radioButton_sex][value='.$monkey[3].']").prop("checked",true);';
     $data.='$("#txtPuce_singe_gauche").val("'.$monkey[5].'");';
@@ -67,19 +90,17 @@ if(isset($_POST['typeModif']))
         break;
         
         case "insert":
+            
             insert_monkey($connexion, $_POST);
-            echo 'alert("Groupe cree !");';
         break;
         
         case "delete":
             $query=delete_monkey($connexion,$_POST['id_singe']);
-            echo 'alert("Groupe supprime !");';
             // echo $query;
         break;
         
         case "applyUpdate":
             update_monkey($connexion, $_POST);
-            echo 'alert("Groupe mise à jour !");';
         break;
         
         
@@ -103,7 +124,23 @@ if(isset($_POST['instruction']))
         
 }
 
-
+if(isset($_POST['instructionType']))
+{
+	
+    $all_types=getAllTypes($connexion);
+    $data1="";
+     while(!$all_types->EOF) 
+        { 
+          
+            $data1.="$('#txtType_singe').append('<option  id=\'$all_types[0]\' value=\'$all_types[0]\'>$all_types[1]</option>');";
+          
+          
+          $all_types->MoveNext();
+          
+        }
+        echo $data1;
+        
+}
 
 
 
