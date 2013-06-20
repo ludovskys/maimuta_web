@@ -9,7 +9,7 @@
 		<h2 class="title">Gestion des pnhs</h2>
 		<hr id="under-title"/>
 			
-			<div class="box">
+			<div class="box" style="width:960px;" >
 			
 				<form action="individualMonkey.php" method="POST">
 					<input type="submit" value="Ajouter un pnh"/>
