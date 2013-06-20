@@ -31,20 +31,20 @@ function getId()
 		
 		<hr id="under-title"/>
 			
-			<div class="box" style="width:440px;" >
+			<div class="box" style="width:500px;">
 		
 				<input type="hidden" id="id_groupe" name="id_groupe" value="<?php getId(); ?>" >
 				<!--<input type="hidden" id="role_utilisateur_courant" name="role_utilisateur_courant" value="<?php //getCurrentUserRole() ?>" >-->
 
 				<table id="userTable" cellspacing="11px">
 					<tr>
-						<td style="width:150px;">Nom : </td>
+						<td style="width:130px;">Nom : </td>
 						<td><input type="text" value="" id="txtNom_groupe" name="nom_groupe"></td>
 						<td id="nom_groupe"></td>
 					</tr>
 					<tr>
 						<td>Description : </td>
-						<td><textarea value="" id="txtDescription_groupe" name="description_groupe"></textarea></td>
+						<td><input type="text" value="" id="txtDescription_groupe" name="description_groupe"></td>
 						<td id="description_groupe" width="500"></td>
 					</tr>
 					

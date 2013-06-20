@@ -160,7 +160,7 @@ else
 <m_bMove>1</m_bMove>
 <m_bPunishITITouches>0</m_bPunishITITouches>
 <m_bPunishNotReward>0</m_bPunishNotReward>
-<m_bSpecifyStimuli>1</m_bSpecifyStimuli>
+<m_bSpecifyStimuli>0</m_bSpecifyStimuli>
 <m_fMaxIntertrialTimeSec>".$elem[3]."</m_fMaxIntertrialTimeSec>
 <m_fMaxTimeMinutes>100</m_fMaxTimeMinutes>
 <m_fMinIntertrialTimeSec>".$elem[2]."</m_fMinIntertrialTimeSec>
@@ -174,7 +174,7 @@ else
 <m_iNumStimuli>1</m_iNumStimuli>
 <m_iRed>255</m_iRed>
 <m_iStartingSize>".$elem[7]."</m_iStartingSize>
-<m_strStimulus>univcam_".$elem[6]."</m_strStimulus>
+<m_strStimulus>".$elem[6]."</m_strStimulus>
 <m_locations>
 <Location_0_X>500</Location_0_X>
 <Location_0_Y>375</Location_0_Y>
