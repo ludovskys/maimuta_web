@@ -119,6 +119,46 @@ function envoiBatterie()
     
 }
 
+function modifierPalier()
+{
+   var values=$.map($('#rightTasks option'), function(e) { return e.value; });
+   var id_palier=$('#txtNomPalier').val();
+    $.ajax({
+        url: "./php/queriesModifier.php",
+        type: "post",
+        data: "id="+id_palier+"&values="+values+"&type=modifierPalier",
+        success: function(data){
+            var styleVar = 'visibility:show; margin-left:270px; margin-top:15px;';
+        
+            $('#res').attr('style',styleVar);
+            
+            $('#txtNomPalier').val('');
+            $('#rightTasks').empty();
+        }
+    });
+    
+}
+
+function modifierBatterie()
+{
+   var values=$.map($('#rightTasks option'), function(e) { return e.value; });
+   var id_palier=$('#txtNomBatterie').val();
+    $.ajax({
+        url: "./php/queriesModifier.php",
+        type: "post",
+        data: "id="+id_palier+"&values="+values+"&type=modifierBatterie",
+        success: function(data){
+            var styleVar = 'visibility:show; margin-left:270px; margin-top:15px;';
+        
+            $('#res').attr('style',styleVar);
+            
+            $('#txtNomBatterie').val('');
+            $('#rightTasks').empty();
+        }
+    });
+    
+}
+
 
 function reset()
 {
