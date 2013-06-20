@@ -1,0 +1,4 @@
+TODO :
+
+- fichier de connexion à utiliser partout pour éviter les redondances : CHECK
+- ajouter un pnh : sexe : changer le textfield par des radiobuttons
