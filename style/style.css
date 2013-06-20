@@ -44,12 +44,35 @@ a
 a:hover
 {
 	color:grey;
+	text-decoration:none;
+
 }
+
+a.lienpresentationlist
+{
+	color:blue;
+	text-decoration:underline;
+	padding-left:0px;
+	padding-right:0px;
+}
+
 img
 {
 	margin-left:10px;
 	margin-right:10px;
 }
+
+ul.presentationlist
+{
+	color:black;
+	list-style-type: circle;
+}
+
+ul.presentationlist li:hover
+{
+	color:black;
+}
+
 ul
 {
 	font-family:arial;
