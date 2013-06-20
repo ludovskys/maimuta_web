@@ -22,6 +22,8 @@
 					
 						// connexion
 						include('connect.php');
+
+						$conn = connect();
 					
 						// récupération des noms des tâches
 						$query = "select DISTINCT id_batterie, nom_batterie FROM CPS_Batteries ORDER BY nom_batterie";

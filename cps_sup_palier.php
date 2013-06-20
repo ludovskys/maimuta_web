@@ -22,6 +22,8 @@
 					
 						// connexion
 						include('connect.php');
+
+						$conn = connect();
 					
 						// récupération des noms des tâches
 						$query = "select id_palier, nom_palier FROM CPS_Paliers ORDER BY nom_palier";
