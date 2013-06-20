@@ -12,7 +12,7 @@
         <select id="object" size="12">
             
         </select>
-		<span id="resultat" style="display:none">Il n'y aucun element dans le liste !</span>
+		<span id="resultat" style="display:none">Il n'y aucun element dans la liste !</span>
         <input type='hidden' name='type' value=<?php echo "'".$_GET['type']."'"; ?>/>
         <input type='hidden' id='objectName' name='name' value='' />
         <input type='hidden' id='objectId' name='id' value='' />

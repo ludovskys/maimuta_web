@@ -32,7 +32,6 @@ include("connect.php");
 			
 
 			$conn->Close();
-			echo "Batterie créée !";
 			
 		}
 		else

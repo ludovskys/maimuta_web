@@ -12,7 +12,7 @@ $conn->open($connStr);
 
 function connect()
 {
-	$dataSourcePath= "C:\wamp\www\maimuta_web\MonkeyCantab_sample_Access2007.accdb";
+	$dataSourcePath= "C:\wamp\www\Acrobatt\Interface_primatologue\MonkeyCantab_sample_Access2007.accdb";
 	$conn = new COM ("ADODB.Connection") or die("Cannot start ADO"); 
 	$user = "admin";
 	$password = "maimuta";

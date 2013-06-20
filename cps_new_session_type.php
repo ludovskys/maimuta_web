@@ -29,7 +29,7 @@
 	
 					?>
 					</select>
-					<label for="inputTextNumberTasks1">Nombre : </label><input id="inputTextNumberTasks1" type="text" name="inputTextNumberTasks1" onkeypress="return validate(event);" size="3">
+					<label for="inputTextNumberTasks1">Nombre : </label><input id="inputTextNumberTasks1" type="text" name="inputTextNumberTasks1" size="3" onkeypress="return validate(event);">
 					<input class="valid" type='submit' value='Valider' onclick='return verifForm();' style="margin-left:30px;" >
 				</form>
 				<?php
@@ -48,65 +48,6 @@
 			
 <script type="text/javaScript" src="js/admin_js.js"></script>
 <script>
-
-	// Contr√¥le des input texts, on s'assure de ne pouvoir donner que des chiffres
-	function validate(evt) {
-		var theEvent = evt || window.event;
-		var key = theEvent.keyCode || theEvent.which;
-
-		// Si touche back space ou fl√®che droite/gauche
-		if (key == 8 || key == 37 || key == 38)
-		{
-			// On effectue le traitement normal
-			return;
-		}
-
-		key = String.fromCharCode( key );
-
-		var regex = /[0-9]|\./;
-
-		if( !regex.test(key)) 
-		{
-			theEvent.returnValue = false;
-			if(theEvent.preventDefault) theEvent.preventDefault();
-		}
-	}
-
-
-	function verifForm()
-	{
-		var res = false;
-		
-		var sessionTypeName = $('#inputTextSessionTypeName').val();
-
-		if (sessionTypeName.length == 0)
-		{
-			res = false;
-			alert("Attention : Vous devez renseigner tous les champs.");
-		}
-		// On check les champs de textes "nombre" de chaque t√¢che
-		else
-		{
-			// On parcourt tous les champs de texte qui ont √©t√© cr√©es
-			for (var i = 1; i <= compteur - 1; i++)
-			{
-				var currentInputTextNumberTask = $('#inputTextNumberTasks'+i).val();
-
-				// Si le nombre de t√¢ches n'est pas renseign√©e
-				if (currentInputTextNumberTask.length == 0)
-				{
-					alert("Attention : Vous devez renseigner tous les champs.");
-					return false;
-				}
-			}
-
-			// Si on est arriv√© jusqu'ici, cela veut dire que tous les param√®tres sont ok
-			res = true;
-		}
-
-		return res;
-	}
-
 	var formSessionType = $('#formSessionType');
 
 	var compteur = 2;
@@ -116,11 +57,11 @@
 	var taskNameArray = ["<?php echo join("\", \"", $listeTask["nom_tache"]); ?>"];
 	var taskIdArray = ["<?php echo join("\", \"", $listeTask["id_tache"]); ?>"];
 	
-	// Appeller lors du click au bouton "plus"
+
 	function addTask()
 	{
 		formSessionType.append('</br><select style="margin-left:55px; margin-right:36px;" id="selectTasks'+compteur+'" name="selectTasks'+compteur+'""></select>');
-		formSessionType.append('<label for="inputTextNumberTasks'+compteur+'">Nombre : </label><input id="inputTextNumberTasks'+compteur+'" type="text" name="inputTextNumberTasks'+compteur+'" onkeypress="return validate(event);" size="3"> </br>');
+		formSessionType.append('<label for="inputTextNumberTasks'+compteur+'">Nombre : </label><input id="inputTextNumberTasks'+compteur+'" type="text" name="inputTextNumberTasks'+compteur+'" size="3" onkeypress="return validate(event);"> </br>');
 
 		hiddenCompteur.val(compteur);
 
@@ -138,6 +79,65 @@
 	$('#buttonAddTasks').click(function() {
   		addTask();
 	});
+	
+	
+	function verifForm()
+	{
+		var res = false;
+		
+		var sessionTypeName = $('#inputTextSessionTypeName').val();
+
+		if (sessionTypeName.length == 0)
+		{
+			res = false;
+			alert("Attention : Vous devez renseigner tous les champs.");
+		}
+		// On check les champs de textes "nombre" de chaque t‚che
+		else
+		{
+			// On parcourt tous les champs de texte qui ont ÈtÈ crÈes
+			for (var i = 1; i <= compteur - 1; i++)
+			{
+				var currentInputTextNumberTask = $('#inputTextNumberTasks'+i).val();
+
+				// Si le nombre de t‚ches n'est pas renseignÈe
+				if (currentInputTextNumberTask.length == 0)
+				{
+					alert("Attention : Vous devez renseigner tous les champs.");
+					return false;
+				}
+			}
+
+			// Si on est arrivÈ jusqu'ici, cela veut dire que tous les paramËtres sont ok
+			res = true;
+		}
+
+		return res;
+	}
+	
+	// ContrÙle des input texts, on s'assure de ne pouvoir donner que des chiffres
+	function validate(evt) 
+	{
+		var theEvent = evt || window.event;
+		var key = theEvent.keyCode || theEvent.which;
+
+		// Si touche back space ou flËche droite/gauche
+		if (key == 8 || key == 37 || key == 38)
+		{
+			// On effectue le traitement normal
+			return;
+		}
+
+		key = String.fromCharCode( key );
+
+		var regex = /[0-9]|\./;
+
+		if( !regex.test(key))
+		{
+			theEvent.returnValue = false;
+			if(theEvent.preventDefault) theEvent.preventDefault();
+		}
+	}
 	
 </script>
 

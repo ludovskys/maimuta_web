@@ -39,8 +39,8 @@ if(isset($_SESSION["connecte"]))
 			}
 			else if($type == "PAL")
 			{
-				//$j = 8;
-				//$t = "CS";
+				$j = 11;
+				$t = "PA";
 			}
 
 			// récupération des éléments du formulaire
@@ -139,7 +139,42 @@ if(isset($_SESSION["connecte"]))
 				}
 				else if($type == "PAL")
 				{
-				
+					if($elem[4] == 1 && $elem[9] == 1)
+					{
+						include("PAL_1_1.php");
+					}
+					else if($elem[4] == 1 && $elem[9] == 2)
+					{
+						include("PAL_1_2.php");
+					}
+					else if($elem[4] == 1 && $elem[9] == 3)
+					{
+						include("PAL_1_3.php");
+					}
+					else if($elem[4] == 2 && $elem[9] == 1)
+					{
+						include("PAL_2_1.php");
+					}
+					else if($elem[4] == 2 && $elem[9] == 2)
+					{
+						include("PAL_2_2.php");
+					}
+					else if($elem[4] == 2 && $elem[9] == 3)
+					{
+						include("PAL_2_3.php");
+					}
+					else if($elem[4] == 3 && $elem[9] == 2)
+					{
+						include("PAL_3_2.php");
+					}
+					else if($elem[4] == 3 && $elem[9] == 3)
+					{
+						include("PAL_3_3.php");
+					}
+					else if($elem[4] == 4 && $elem[9] == 3)
+					{
+						include("PAL_4_3.php");
+					}
 				}
 			}
 			else
