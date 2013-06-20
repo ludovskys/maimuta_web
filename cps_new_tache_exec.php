@@ -16,6 +16,9 @@ if(isset($_SESSION["connecte"]))
 			
 			$name = $_POST['task_name'];
 			$type = $_POST['type_tache'];
+			
+			echo "nom:".$_POST['task_name']."</br>";
+			echo "type:".$_POST['type_tache']."</br>";
 	
 			if($type == "Training Program")
 			{
@@ -141,39 +144,39 @@ if(isset($_SESSION["connecte"]))
 				{
 					if($elem[4] == 1 && $elem[9] == 1)
 					{
-						include("PAL_1_1.php");
+						include("PAL_1S1D.php");
 					}
 					else if($elem[4] == 1 && $elem[9] == 2)
 					{
-						include("PAL_1_2.php");
+						include("PAL_1S2D.php");
 					}
 					else if($elem[4] == 1 && $elem[9] == 3)
 					{
-						include("PAL_1_3.php");
+						include("PAL_1S3D.php");
 					}
 					else if($elem[4] == 2 && $elem[9] == 1)
 					{
-						include("PAL_2_1.php");
+						include("PAL_2S1D.php");
 					}
 					else if($elem[4] == 2 && $elem[9] == 2)
 					{
-						include("PAL_2_2.php");
+						include("PAL_2S2D.php");
 					}
 					else if($elem[4] == 2 && $elem[9] == 3)
 					{
-						include("PAL_2_3.php");
+						include("PAL_2S3D.php");
 					}
 					else if($elem[4] == 3 && $elem[9] == 2)
 					{
-						include("PAL_3_2.php");
+						include("PAL_3S2D.php");
 					}
 					else if($elem[4] == 3 && $elem[9] == 3)
 					{
-						include("PAL_3_3.php");
+						include("PAL_3S3D.php");
 					}
 					else if($elem[4] == 4 && $elem[9] == 3)
 					{
-						include("PAL_4_3.php");
+						include("PAL_4S3D.php");
 					}
 				}
 			}
