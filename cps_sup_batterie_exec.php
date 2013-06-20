@@ -23,7 +23,7 @@
 		}
 		?>
 		</div>
-		<span style='font-size:18px; color:black;'>Suppression de la batterie correctement &eacute;ffectu&eacute;e !</span>
+		<span style='font-size:18px; color:black;'>Suppression de la batterie correctement effectu&eacute;e !</span>
 		<a class="back" href="main_page.php">Retour</a>
 			
 <?php

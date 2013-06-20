@@ -15,7 +15,7 @@
 					$conn->execute("DELETE FROM CPS_Taches WHERE `id_tache`=$id");
 					unlink("./resultats/$fisier.xml");
 					//$success = true;					
-					echo "<span style='font-size:18px; color:black;'>Supression des t&acirc;chea correctement &eacute;ffectu&eacute;e !</span>";
+					echo "<span style='font-size:18px; color:black;'>Supression des t&acirc;chea correctement effectu&eacute;e !</span>";
 					//echo "Supression des t&acirc;ches correctement &eacute;ffectu&eacute;e !";
 
 				}

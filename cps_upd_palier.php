@@ -32,9 +32,9 @@
 					</td>
 				</tr>
 				<tr>
-					<th><span style="display:block; width:200px; margin-top:30px;" >Liste des sessions disponnibles:</span></th>
+					<th><span style="display:block; width:200px; margin-top:30px;" >Liste des sessions disponibles:</span></th>
 					<th></th>
-					<th><span style="display:block; width:220px; margin-top:30px; margin-left:20px;" >Listes des session du palier en cours:</span></th>
+					<th><span style="display:block; width:220px; margin-top:30px; margin-left:20px;" >Listes des sessions du palier en cours:</span></th>
 				</tr>
 				<tr>
 					<td><select id="leftTasks" class="select" size="6"></select></td>

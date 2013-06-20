@@ -222,7 +222,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td>Changer la couleur de la cible en cas de bonne r&eacute;ponse:</td>
+						<td>Changer la figure de la cible en cas de bonne r&eacute;ponse:</td>
 						<td>
 							<select id="color_cible" class="liste" name="elemSO6" onChange="affichage4();">
 								<option value="0" >non</option>

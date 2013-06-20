@@ -11,7 +11,7 @@
 				<table>
 					<tr>
 						<th align="left" style="width:250px; padding-bottom:20px;" >Sélectionner un groupe :</th>
-						<th align="left" style="width:250px; padding-bottom:20px;" >Batteries pour ce groupe :</th>
+						<th align="left" style="width:250px; padding-bottom:20px;" >Batterie pour ce groupe :</th>
 					</tr>
 					<tr>
 						<td style="padding-left:15px;"><select id='groupes' onchange='getAllBatteries();'></select></td>
