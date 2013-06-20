@@ -347,6 +347,7 @@
 					//read from file .xml "champs"
 					$elem2 = get_element("m_fMaxResponseTimePhase1Sec");
 					$elem3 = get_element("m_fMaxResponseTimePhase2Sec");
+					$elem6 = get_element('Level_0_Delay');
 										
 ?>
 
@@ -381,7 +382,6 @@
 						echo "</select>\n";
 						$test_initial = $elem4 == 0 ? "" : " style='display: none;'";
 						$elem5 = get_element("m_fPhase1StimDurIfNoTouchReqdSec");
-						$elem6 = get_element("m_fPhase1StimDurIfNoTouchReqdSec");  //OCS:!!!!!!!!!!! in DNMS.php - pas de elem[6]!!!!!!!!!!!!!
 
 					?>
 					<tr id="valid_temps"<?php echo $test_initial; ?>><td>Temps de pr&eacute;sentation:</td><td><input style="margin-right:15px;" class="champs" name="elemDS5" type="text" value="<?php echo $elem5; ?>" size="3" />seconde(s)</td></tr>
@@ -436,7 +436,7 @@
 				$elem3 = get_element('m_fMaxResponseTimeSec');
 				$elem4 = get_element('m_iStartingNumStimuli');
 				$elem5 = get_element('m_fBlankScreenTimeSec');
-				$elem6 = get_element('Level_0_Delay');
+				//$elem6 = get_element('Level_0_Delay');
 				$elem7 = get_element('m_fVisualMarkerTimeSec');  //Doar pentru SOSS_M.php; la SOSS.php este 1
 				$elem8 = get_element('m_strVisualMarkerObject'); //Doar pentru SOSS_M.php; la SOSS.php este univcam_IDED_shape_21
 				$elem9 = get_element('m_bMarkResponsesAural');
