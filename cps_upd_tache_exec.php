@@ -436,7 +436,7 @@
 				$elem3 = get_element('m_fMaxResponseTimeSec');
 				$elem4 = get_element('m_iStartingNumStimuli');
 				$elem5 = get_element('m_fBlankScreenTimeSec');
-				//$elem6 = get_element(''); //TODO: absent
+				$elem6 = get_element('Level_0_Delay');
 				$elem7 = get_element('m_fVisualMarkerTimeSec');  //Doar pentru SOSS_M.php; la SOSS.php este 1
 				$elem8 = get_element('m_strVisualMarkerObject'); //Doar pentru SOSS_M.php; la SOSS.php este univcam_IDED_shape_21
 				$elem9 = get_element('m_bMarkResponsesAural');

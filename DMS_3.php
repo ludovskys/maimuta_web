@@ -153,7 +153,7 @@ else
 <ModuleConfigurations>
 <Task_0>
 <DMTS>
-<Level_0_Delay>5</Level_0_Delay>
+<Level_0_Delay>".$elem[6]."</Level_0_Delay>
 <NumLevelDelays>1</NumLevelDelays>
 <NumStimuli>0</NumStimuli>
 <m_bCorrectionIfWrongInPhase2>0</m_bCorrectionIfWrongInPhase2>
