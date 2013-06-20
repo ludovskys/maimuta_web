@@ -99,7 +99,7 @@ else
 <m_iPelletsPerReinf>1</m_iPelletsPerReinf>
 <m_iVisualStimulusXCoord>500</m_iVisualStimulusXCoord>
 <m_iVisualStimulusYCoord>375</m_iVisualStimulusYCoord>
-<m_strVisualStimulusName></m_strVisualStimulusName>
+<m_strVisualStimulusName>whiteScreen</m_strVisualStimulusName>
 <m_sound>
 <m_bPlaySound>1</m_bPlaySound>
 <m_bSoundIsWav>0</m_bSoundIsWav>
