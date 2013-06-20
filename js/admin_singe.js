@@ -183,7 +183,7 @@ function file(fichier)
             var dateNaissanceSinge      = $('#txtDateNaissance_singe').val();
             var lieuNaissanceSinge      = $('#txtLieuNaissance_singe').val();
             var groupeSinge             = $('#groupe_singe option:selected').val();
-            var typeSinge               = $('#txtType_singe option:selected').val();
+            var typeSinge               = $('#txtType_singe').val();
             var puceSingeGauche         = $('#txtPuce_singe_gauche').val();
             var puceSingeDroite         = $('#txtPuce_singe_droit').val();
             var descriptionSinge        = $('#txtDesc_singe').val();
@@ -307,22 +307,7 @@ function file(fichier)
                     type: "POST",
                     url: url,
                     dataType:'script',
-                    data:'instruction=getAllGroupes&instructionType=getAllTypes',
-                    success: function(data){
-                      
-                    }
-                });
-    }
-	
-	function getAllTypesOnCreate()
-    {
-		alert("coco");
-        var url='controlDataIndivMonkey.php';
-        $.ajax({
-                    type: "POST",
-                    url: url,
-                    dataType:'script',
-                    data:'instructionType=getAllTypes',
+                    data:'instruction=getAllGroupes',
                     success: function(data){
                       
                     }
