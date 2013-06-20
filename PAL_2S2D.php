@@ -35,10 +35,10 @@ else
 <m_bDatabaseConsidersThisReward>1</m_bDatabaseConsidersThisReward>
 <m_bExtraPunishmentDevice>0</m_bExtraPunishmentDevice>
 <m_bExtraRewardDevice>0</m_bExtraRewardDevice>
-<m_bGivePellet>0</m_bGivePellet>
-<m_bGivePump>1</m_bGivePump>
+<m_bGivePellet>1</m_bGivePellet>
+<m_bGivePump>0</m_bGivePump>
 <m_bGivePump2>0</m_bGivePump2>
-<m_bGiveVisualStimulus>1</m_bGiveVisualStimulus>
+<m_bGiveVisualStimulus>0</m_bGiveVisualStimulus>
 <m_bPump2Contingent>1</m_bPump2Contingent>
 <m_bPumpContingent>1</m_bPumpContingent>
 <m_bUseMagazineLamp>0</m_bUseMagazineLamp>
@@ -78,7 +78,7 @@ else
 <m_bGivePellet>0</m_bGivePellet>
 <m_bGivePump>0</m_bGivePump>
 <m_bGivePump2>0</m_bGivePump2>
-<m_bGiveVisualStimulus>0</m_bGiveVisualStimulus>
+<m_bGiveVisualStimulus>1</m_bGiveVisualStimulus>
 <m_bPump2Contingent>1</m_bPump2Contingent>
 <m_bPumpContingent>1</m_bPumpContingent>
 <m_bUseMagazineLamp>0</m_bUseMagazineLamp>
