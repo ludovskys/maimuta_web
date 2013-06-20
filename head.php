@@ -43,41 +43,35 @@
 	  <li><a href="#">T&acirc;che</a>
 	  	<ul style="background-color: white;">
 		  <li><a href="cps_new_tache.php">Nouvelle t&acirc;che</a>|</li>
-		  <!--<li><a href="cps_upd_tache.php">Modification d'une t&acirc;che</a>|</li>
-		  <li><a href="cps_sup_tache.php">Suppression d'une t&acirc;che</a></li>-->
-		</ul>
-	  </li>
-	  <li><a href="#">Session type</a>
-		<ul style="background-color:white;">
-		  <li><a href="cps_new_session_type.php">Nouvelle session type</a>|</li>
-		  <li><a href="cps_upd_session_type.php">Modification d'une session type</a>|</li>
-		  <!--<li><a href="#">Suppression d'une session</a></li>-->
+		  <li><a href="cps_upd_tache.php">Modification d'une t&acirc;che</a>|</li>
+		  <li><a href="cps_sup_tache.php">Suppression d'une t&acirc;che</a></li>
 		</ul>
 	  </li>
 	  <li><a href="#">Session</a>
 		<ul style="background-color:white;">
+		  <li><a href="cps_new_session_type.php">Nouvelle session type</a>|</li>
 		  <li><a href="cps_new_session.php">Nouvelle session</a>|</li>
-		  <li><a href="cps_upd_session.php">Modification d'une session</a>|</li>
-		  <!--<li><a href="#">Suppression d'une session</a></li>-->
+		  <li><a href="#">Modification d'une session</a>|</li>
+		  <li><a href="#">Suppression d'une session</a></li>
 		</ul>
 	  </li>
 	  <li><a href="#">Palier</a>
 	  	<ul style="background-color:white;">
 		  <li><a href="cps_new_palier.php">Nouveau palier</a>|</li>
-		  <!--<li><a href="#">Modification d'un palier</a>|</li>
-		  <li><a href="#">Suppression d'un palier</a></li>-->
+		  <li><a href="cps_upd_palier.php">Modification d'un palier</a>|</li>
+		  <li><a href="cps_sup_palier.php">Suppression d'un palier</a></li>
 		</ul>
 	  </li>
 	  <li><a href="#">Batterie</a>
 	  	<ul style="background-color:white;">
 		  <li><a href="cps_new_batterie.php">Nouvelle batterie</a>|</li>
-		  <!--<li><a href="#">Modification de la batterie</a>|</li>
-		  <li><a href="#">Suppression de la batterie</a></li>-->
+		  <li><a href="cps_upd_batterie.php">Modification de la batterie</a>|</li>
+		  <li><a href="cps_sup_batterie.php">Suppression de la batterie</a></li>
 		</ul>
 	  </li>
 	  <li><a href="#">Administration</a>
 		 <ul style="background-color:white;">
-			<li><a href="monkey_list.php">Pnh</a>|</li>
+			<li><a href="monkey_list.php">Singes</a>|</li>
 			<li><a href="groupe_list.php">Groupes</a>|</li>
 			<li><a href="batterie_groupe.php">Liaison groupe batterie</a></li>
 		</ul>

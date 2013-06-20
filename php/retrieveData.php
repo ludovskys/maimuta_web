@@ -2,5 +2,4 @@
 
 /*
 * retrieve the valid task
-*/
 ?>  

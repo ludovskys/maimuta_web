@@ -38,13 +38,13 @@ function getId()
 
 				<table id="userTable" cellspacing="11px">
 					<tr>
-						<td style="width:350px;" >Nom : </td>
+						<td style="width:290px;" >Nom : </td>
 						<td><input type="text" value="" id="txtNom_singe" name="nom_singe"></td>
 						<td id="nom_singe"></td>
 					</tr>
 					<tr>
 						<td>Date de naissance : </td>
-						<td><input type="text" value="" id="txtDateNaissance_singe" name="dateNaissance_singe" size="9"></td>
+						<td><input type="text" value="" id="txtDateNaissance_singe" name="dateNaissance_singe" size="7"></td>
 						<td id="dateNaissance_singe" width="500"></td>
 					</tr>
 					<tr>
@@ -55,11 +55,11 @@ function getId()
 					<tr>
 						<td>Groupe : </td>
 						<td><select id="groupe_singe"></select></td>
-						
+					
 					</tr>
 					<tr>
 						<td>Type : </td>
-						<td><select id="txtType_singe"></select></td>
+						<td><input type="text" value="" id="txtType_singe" name="type_singe" size="1"></td>
 						<td id="type_singe"></td>
 					</tr>
 					<tr>
@@ -74,7 +74,7 @@ function getId()
 					</tr>
 					<tr>
 						<td>Description : </td>
-						<td><textarea value="" id="txtDesc_singe" name="descriptif_singe"></textarea></td> 
+						<td><textarea value="" id="txtDesc_singe" name="descriptif_singe"></textarea></td>
 						<td id="descriptif_singe"></td>
 					</tr>
 					<tr>
@@ -101,7 +101,6 @@ function getId()
     {
         case "insert":
             echo "$(document).ready(getAllGroupesOnCreate());";
-            //echo "$(document).ready(getAllTypesOnCreate());";
         break;
         case "update":
             echo "$(document).ready(recupInfosSinge());";

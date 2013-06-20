@@ -17,8 +17,8 @@ WHERE (((CPS_Singes.id_singe)=$id));";
 
 function get_monkeys($connexion)
 {
-    $monkeys_query = "SELECT CPS_Singes.id_singe, CPS_Singes.nom_singe, CPS_Singes.date_naissance_singe, CPS_Groupes_Singes.nom_groupe, CPS_Types_Singes.libelle_type_singe, CPS_Singes.sexe, CPS_Singes.RFID_bras_gauche, CPS_Singes.RFID_bras_droit
-FROM CPS_Singes,CPS_Groupes_Singes,CPS_Types_Singes WHERE CPS_Singes.id_groupe = CPS_Groupes_Singes.id_groupe AND CPS_Types_Singes.id_type = CPS_Singes.id_type ORDER BY CPS_Singes.id_singe ;
+    $monkeys_query = "SELECT CPS_Singes.id_singe, CPS_Singes.nom_singe, CPS_Singes.date_naissance_singe, CPS_Singes.id_groupe, CPS_Singes.id_type, CPS_Singes.sexe, CPS_Singes.RFID_bras_gauche,CPS_Singes.RFID_bras_droit
+FROM CPS_Singes ORDER BY CPS_Singes.id_singe ;
 
 ";
     $rs = executeQuery($connexion, $monkeys_query);
@@ -28,7 +28,7 @@ FROM CPS_Singes,CPS_Groupes_Singes,CPS_Types_Singes WHERE CPS_Singes.id_groupe =
 function insert_monkey($connexion, $monkey)
 {
     $query = "INSERT INTO CPS_Singes
-            (nom_singe, date_naissance_singe, id_groupe, id_type, sexe, RFID_bras_gauche, RFID_bras_droit, lieu_naissance, descriptif_libre, connecte_g, connecte_d, box)
+            (nom_singe, date_naissance_singe, id_groupe, id_type, sexe, RFID_bras_gauche,RFID_bras_droit,lieu_naissance,descriptif_libre,connecte)
             VALUES (
             '".str_replace("'", "''", $monkey['nom_singe'])."',
             '".str_replace("'", "''", $monkey['dateNaissance_singe'])."',
@@ -39,9 +39,7 @@ function insert_monkey($connexion, $monkey)
             '".str_replace("'", "''", $monkey['puce_singe_droit'])."',
             '".str_replace("'", "''", $monkey['lieuNaissance_singe'])."',
             '".str_replace("'", "''", $monkey['descriptif_singe'])."',
-            'N',
-			'N',
-			'0'
+            'N'
             )";
                         //echo $query;
     $rs = executeQuery($connexion, $query);
@@ -82,14 +80,6 @@ function getMonkeyGroupe($connexion,$monkeyId)
         return $rs;
 }
 
-function getMonkeyType($connexion,$monkeyId)
-{
-    $query = "SELECT CPS_Singes.id_type FROM CPS_Singes WHERE (((CPS_Singes.id_singe)=trim($monkeyId)));";
-        // echo $query;
-        $rs = executeQuery($connexion, $query);
-        return $rs;
-}
-
  function getAllGroupes($connexion)
     {
         $query = "SELECT CPS_Groupes_Singes.id_groupe, CPS_Groupes_Singes.nom_groupe FROM CPS_Groupes_Singes;";
@@ -97,13 +87,3 @@ function getMonkeyType($connexion,$monkeyId)
         $rs = executeQuery($connexion, $query);
         return $rs;
     }
-	
-function getAllTypes($connexion)
-    {
-        $query = "SELECT CPS_Types_Singes.id_type, CPS_Types_Singes.libelle_type_singe FROM  CPS_Types_Singes;";
-        // echo $query;
-        $rs = executeQuery($connexion, $query);
-        return $rs;
-    }
-	
-?>

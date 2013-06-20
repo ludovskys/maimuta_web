@@ -37,77 +37,86 @@ function envoiSession()
 
 function envoiPalier()
 {
-    var values=$.map($('#rightTasks option'), function(e) { return e.value; });
-    var nom_palier=$('#txtNomPalier').val();
+   var values=$.map($('#rightTasks option'), function(e) { return e.value; });
+   var nom_palier=$('#txtNomPalier').val();
+    $.ajax({
+        url: "./insertPalier.php",
+        type: "post",
+        data: "tab="+values+"&nom_palier="+nom_palier,
+        success: function(data){
 
-    // Si aucun nom n'est donné
-    if (nom_palier.length == 0)
-    {
-        alert("Attention : Vous devez donner un nom à votre palier");
-    }
-    // Si aucune session n'a été sélectionné pour le palier
-    else if (values.length == 0)
-    {
-        alert("Attention : Votre palier ne contient aucune session");
-    }
-    // Sinon, on peut y aller
-    else
-    {
-         //alert("Ready to go!");
-
-        $.ajax({
-                url: "./insertPalier.php",
-                type: "post",
-                data: "tab="+values+"&nom_palier="+nom_palier,
-                success: function(data)
-                {
-                    var styleVar = 'visibility:show; margin-left:270px; margin-top:15px;';
-
-                    $('#res').attr('style',styleVar);
-
-                    $('#txtNomPalier').val('');
-                    $('#rightTasks').empty();
-                }
-            });
-    }
+		    var styleVar = 'visibility:show; margin-left:270px; margin-top:15px;';
+		
+			$('#res').attr('style',styleVar);
+			
+			$('#txtNomPalier').val('');
+			$('#rightTasks').empty();
+        }
+    });
+	
 }
 
 function envoiBatterie()
 {
    var values=$.map($('#rightTasks option'), function(e) { return e.value; });
     var nom_batterie=$('#txtNomBatterie').val();
-
-    // Si aucun nom n'est donné
-    if (nom_batterie.length == 0)
-    {
-        alert("Attention : Vous devez donner un nom à votre batteire");
-    }
-    // Si aucune session n'a été sélectionné pour le palier
-    else if (values.length == 0)
-    {
-        alert("Attention : Votre batterie ne contient aucune palier");
-    }
-    else
-    {
-        $.ajax({
-            url: "./insertBatterie.php",
-            type: "post",
-            data: "tab="+values+"&nom_batterie="+nom_batterie,
-            success: function(data){
-
-                var styleVar = 'visibility:show; margin-left:270px; margin-top:15px;';
-
-                $('#res').attr('style',styleVar);
-                alert(data);
-                $('#txtNomBatterie').val('');
-                $('#rightTasks').empty();
-            }
-        });
-    }
-    
-    
+    $.ajax({
+        url: "./insertBatterie.php",
+        type: "post",
+        data: "tab="+values+"&nom_batterie="+nom_batterie,
+        success: function(data){
+		
+		    var styleVar = 'visibility:show; margin-left:270px; margin-top:15px;';
+		
+			$('#res').attr('style',styleVar);
+			
+			$('#txtNomBatterie').val('');
+			$('#rightTasks').empty();
+        }
+    });
+	
 }
 
+
+function modifierPalier()
+{
+   var values=$.map($('#rightTasks option'), function(e) { return e.value; });
+   var id_palier=$('#txtNomPalier').val();
+    $.ajax({
+        url: "./php/queriesModifier.php",
+        type: "post",
+        data: "id="+id_palier+"&values="+values+"&type=modifierPalier",
+        success: function(data){
+		    var styleVar = 'visibility:show; margin-left:270px; margin-top:15px;';
+		
+			$('#res').attr('style',styleVar);
+			
+			$('#txtNomPalier').val('');
+			$('#rightTasks').empty();
+        }
+    });
+	
+}
+
+function modifierBatterie()
+{
+   var values=$.map($('#rightTasks option'), function(e) { return e.value; });
+   var id_palier=$('#txtNomBatterie').val();
+    $.ajax({
+        url: "./php/queriesModifier.php",
+        type: "post",
+        data: "id="+id_palier+"&values="+values+"&type=modifierBatterie",
+        success: function(data){
+		    var styleVar = 'visibility:show; margin-left:270px; margin-top:15px;';
+		
+			$('#res').attr('style',styleVar);
+			
+			$('#txtNomBatterie').val('');
+			$('#rightTasks').empty();
+        }
+    });
+	
+}
 
 function reset()
 {
