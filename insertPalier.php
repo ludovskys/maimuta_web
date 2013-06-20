@@ -9,11 +9,11 @@
 			$conn = connect();
 
 			// session
-			$query = "INSERT INTO CPS_Paliers (nom_palier) values ('".$_POST['nom_palier']."')";
+			$query = "INSERT INTO CPS_Paliers (nom_palier) values ('".$_POST['nom_palier']."')"; 
 			$rs = $conn->execute($query); 
 			
 			// id de la session
-			$query = "SELECT id_palier FROM CPS_Paliers WHERE nom_palier = '".$_POST['nom_palier']."'";
+			$query = "SELECT id_palier FROM CPS_Paliers WHERE nom_palier = '".$_POST['nom_palier']."'"; 
 			$rs = $conn->execute($query); 
 			while(!$rs->EOF)
 			{ 

@@ -251,7 +251,9 @@
 							<select class="liste" name="elemSO9">
 								<option value="0" >non</option>
 								<option value="1" >oui</option>
-							</select></td></tr>
+							</select>
+						</td>
+					</tr>
 					<tr>
 						<td>Choisir de r&eacute;compenser:</td>
 						<td>
@@ -324,16 +326,100 @@
 					</tr>
 				</table>
 			
-				<!-- TODO : Tâche PAL -->
-				<table id="PAL" style="width:400px; display:none;" cellspacing="10px">
+				<!-- Tâche PAL -->
+				<table id="PAL" style="width:520px; display:none;" cellspacing="10px">
 					<tr>
-						<td>Critere 1 PAL</td>
+						<td>De quelle mani&egrave;re lancer la t&acirc;che:</td>
+						<td>
+							<select class="liste" name="elemPA1">
+								<option value="0">automatique</option>
+								<option value="1">action sur le levier</option>
+							</select>
+						</td>
 					</tr>
 					<tr>
-						<td>Critere 2 PAL</td>
+						<td>Choix du dossier contenant les diff&eacute;rents stimuli visuels possibles:</td>
+						<td>
+							<select class="liste" name="elemPA2">
+								<option value="2">camcogpal_0</option>
+								<option value="3">camcogpal_1</option>
+								<option value="4">camcogpal_2</option>
+								<option value="5">camcogpal_3</option>
+								<option value="6">camcogpal_4</option>
+							</select>
+						</td>
 					</tr>
 					<tr>
-						<td>Critere 3 PAL</td>
+						<td>Choix du temps de r&eacute;ponse maximum autoris&eacute; pour r&eacute;pondre:</td>
+						<td>
+							<input style="margin-right:15px;" class="champs" name="elemPA3" type="text" value="" size="3" onkeypress="validate(event)" />seconde(s)
+						</td>
+					</tr>
+					<tr>
+						<td>Au cours de la phase 1, choix du nombre de stimuli visuel:</td>
+						<td>
+							<select id="nb_stimuli" class="liste" name="elemPA4" onChange="affichage7();" style="width:40px;" >
+								<option value="1" >1</option>
+								<option value="2" >2</option>
+								<option value="3" >3</option>
+								<option value="4" >4</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>Au cours de la phase 1:</td>
+						<td>
+							<select style="width:210px;" id="valid_cible_PAL" class="liste" name="elemPA5" onChange="affichage6();">
+								<option value="1">validation cible en la touchant</option>
+								<option value="0">presentation stimulus pendant un certain temps</option>
+							</select>
+						</td>
+					</tr>
+					<tr id="valid_temps_PAL" style="display:none;">
+						<td>Temps de pr&eacute;sentation:</td>
+						<td>
+							<input style="margin-right:15px;" class="champs" name="elemPA6" type="text" value="" size="3" onkeypress="validate(event)" />seconde(s)
+						</td>
+					</tr>
+					<tr id="valid_recompense" >
+						<td>Choisir de r&eacute;ponser le sujet:</td>
+						<td>
+							<select class="liste" name="elemPA7" style="width:50px;">
+								<option value="0" >non</option>
+								<option value="1" >oui</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>Choix du temps de latence entre la phase 1 et la phase 2:</td>
+						<td>
+							<input style="margin-right:15px;" class="champs" name="elemPA8" type="text" value="" size="3" onkeypress="validate(event)"/>seconde(s)
+						</td>
+					</tr>
+					<tr>
+						<td>Au cours de la phase 2, choix du nombre de stimuli distracteur:</td>
+						<td>
+							<select class="liste" name="elemPA9" style="width:40px;" >
+								<option id="value1" value="1" >1</option>
+								<option id="value2" value="2" >2</option>
+								<option id="value3" value="3" >3</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>Au cours de la phase 2, le temps inter-stimuli:</td>
+						<td>
+							<input style="margin-right:15px;" class="champs" name="elemPA10" type="text" value="" size="3" onkeypress="validate(event)"/>seconde(s)
+						</td>
+					</tr>
+					<tr>
+						<td>Choisir de r&eacute;compenser:</td>
+						<td>
+							<select style="width:180px;" class="liste" name="elemPA11">
+								<option value="0" >pour essai complet r&eacute;ussi</option>
+								<option value="1" >pour chaque bonne r&eacute;ponse</option>
+							</select>
+						</td>
 					</tr>
 				</table>
 				
@@ -414,7 +500,7 @@ function affichage()
 			$('#PAL').show();
 		break;
 	
-		case '------':
+		case '--------------':
 			$('#TP').hide();
 			$('#DMS').hide();
 			$('#SOSS').hide();
@@ -503,10 +589,76 @@ function affichage5()
 	}
 }
 
+function affichage6()
+{
+	var elem6 = $('#valid_cible_PAL option:selected').text();
+	
+	switch(elem6)
+	{
+		case 'validation cible en la touchant':
+			$('#valid_temps_PAL').hide();
+			$('#valid_recompense').show();
+		break;
+		
+		case 'presentation stimulus pendant un certain temps':
+			$('#valid_temps_PAL').show();
+			$('#valid_recompense').hide();
+		break;
+	}
+}
+
+function affichage7()
+{
+	var elem7 = $('#nb_stimuli option:selected').text();
+	//var value1 = document.getElementById('value1').setAttribute('selected', 'selected');
+	
+	switch(elem7)
+	{
+		case '1':
+			$('#value1').removeAttr('disabled');
+			$('#value2').removeAttr('disabled');
+			$('#value3').removeAttr('disabled');
+			$('#value1').attr('selected', 'selected');
+			$('#value2').removeAttr('selected');
+			$('#value3').removeAttr('selected');
+		break;
+				
+		case '2':
+			$('#value1').removeAttr('disabled');
+			$('#value2').removeAttr('disabled');
+			$('#value3').removeAttr('disabled');
+			$('#value1').attr('selected', 'selected');
+			$('#value2').removeAttr('selected');
+			$('#value3').removeAttr('selected');
+		break;
+		
+		case '3':
+			$('#value1').attr('disabled', 'disabled');
+			$('#value2').removeAttr('disabled');
+			$('#value3').removeAttr('disabled');
+			$('#value1').removeAttr('selected');
+			$('#value2').attr('selected', 'selected');
+			$('#value3').removeAttr('selected');
+		break;
+		
+		case '4':
+			$('#value1').attr('disabled', 'disabled');
+			$('#value2').attr('disabled', 'disabled');
+			$('#value3').removeAttr('disabled');
+			$('#value1').removeAttr('selected');
+			$('#value2').removeAttr('selected');
+			$('#value3').attr('selected', 'selected');
+		break;
+
+	}
+}
+
+
 function pop()
 {
 	window.open('stimuli_figure_image.php','popup','width=850,height=450,left=250,top=150,scrollbars=0');
 }
+
 
 // Vérification du formulaire d'ajout de tâches
 function verifForm()
@@ -618,10 +770,12 @@ function verifForm()
 			break;
 		
 			case 'PAL':
-
+			
+				res = true;
+				
 			break;
 		
-			case '------':
+			case '--------------':
 
 			break;
 		
@@ -639,5 +793,30 @@ function verifForm()
 
 	return res;
 }
+
+// Contrôle des input texts, on s'assure de ne pouvoir donner que des chiffres
+function validate(evt) 
+{
+	var theEvent = evt || window.event;
+	var key = theEvent.keyCode || theEvent.which;
+
+	// Si touche back space ou flèche droite/gauche
+	if (key == 8 || key == 37 || key == 38)
+	{
+		// On effectue le traitement normal
+		return;
+	}
+
+	key = String.fromCharCode( key );
+
+	var regex = /[0-9]|\./;
+
+	if( !regex.test(key)) 
+	{
+		theEvent.returnValue = false;
+		if(theEvent.preventDefault) theEvent.preventDefault();
+	}
+}
+
 
 </script>

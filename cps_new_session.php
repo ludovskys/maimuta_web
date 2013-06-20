@@ -110,7 +110,7 @@
 					 success: function(data){
 					   $('#inputTextSessionName').val("");
 					   $('#selectSessionsTypesTasks').empty();
-					   alert('Session cree avec succes !');
+					   alert('Session cree avec succes');
 					 }
 				 });
 

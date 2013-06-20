@@ -15,7 +15,7 @@ $query = "select Code_FR from CPS_Taches_Valides where Valide='O'";
  //execute the SQL statement and return records 
 $rs = $conn->execute($query); 
 
- $str.= "<option>------</option>"; 
+ $str.= "<option>--------------</option>"; 
  
 while (!$rs->EOF)  //carry on looping through while there are records 
 { 
