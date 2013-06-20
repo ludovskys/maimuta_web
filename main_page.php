@@ -37,7 +37,35 @@
 	</div>
 -->
 
-<span>Texte d'explication a venir</span>
+<span>
+
+Pour pouvoir créer une batterie complète, voici les démarches à effectuer : </br>
+
+<ul class="presentationlist">
+<li>créer des <a class="lienpresentationlist" href="cps_new_tache.php">tâches</a>. Pour créer une tâche, donner un nom à cette tâche puis son type, 
+	et remplisser les paramètres du type de la tâche en conséquence. Vous pouvez créer différents types de tâches : TP, SOSS, CSRT, PAL ;</li>
+<li>une fois les tâches crées, créer des <a class="lienpresentationlist" href="cps_new_session_type.php">sessions types</a> : pour cela, 
+	donner un nom à votre session type, puis le nombre de tâches voulues;</li>
+<li>ensuite, créer des <a class="lienpresentationlist" href="cps_new_session.php">sessions</a> : pour cela, choississez une session type : 
+	la liste des tâches liées à cette session type s'affiche automatiquement dans la liste à droite : 
+	vous avez la possibilité de mélanger les tâches et de faire quelques ajustements en changeant l'ordre des tâches dans la session;</li>
+<li>création des <a class="lienpresentationlist" href="cps_new_palier.php">paliers</a> : pour pouvoir créer un palier, donner un nom et choississez
+ les sessions que vous voulez ajouter dans le palier, puis valider;
+<li>créations des <a class="lienpresentationlist" href="cps_new_batterie.php">batteries</a> : la démarche est la même que pour les paliers.</li>
+</ul>
+
+Vous avez aussi la possibilité de :
+<ul class="presentationlist">
+<li>lister des <a class="lienpresentationlist" href="monkey_list.php">singes</a>, 
+	lister des <a class="lienpresentationlist" href="groupe_list.php">groupes</a></li>
+<li>éditer des singes, éditer des groupes</li>
+<li>ajouter un <a class="lienpresentationlist" href="individualMonkey.php">singe</a>,
+	ajouter un <a class="lienpresentationlist" href="individualGroupe.php">groupes</a></li>
+</ul>
+
+Enfin, vous pouvez lier une batterie à un groupe <a class="lienpresentationlist" href="batterie_groupe.php">ici</a>.
+
+</span>
 
 
 		
