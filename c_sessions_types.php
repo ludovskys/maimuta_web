@@ -7,7 +7,7 @@ $connexion = connect();
 $sessionId = 0;
 
 //declare the SQL statement that will query the database 
-$query = "INSERT INTO CPS_Sessions_Types (nom_session_type) VALUES ('".$_POST['sessionTypeName']."');"; 
+$query = "INSERT INTO CPS_Sessions_Types (nom_session_type, id_tache_motivation, temps_punition, ratio_recomp, nombre_essai_non_recomp) VALUES ('".$_POST['sessionTypeName']."', '".$_POST['tacheDemotiv']."', '".$_POST['punition']."', '".$_POST['ratio']."', '".$_POST['nbEssai']."');"; 
 
 //execute the SQL statement and return records 
 $rs = $connexion->execute($query); 

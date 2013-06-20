@@ -23,16 +23,26 @@
 					<th><span style="display:block; width:220px; margin-top:30px; margin-left:20px;" >Listes des session du palier en cours:</span></th>
 				</tr>
 				<tr>
-					<td><select id="leftTasks" class="select" size="6"></select></td>
-					<td><img class='switch' src="./images/arrow.png" style="width:30px; vertical-align:70px; margin-left:40px;" onclick="switchPlace('toRight');" />
-						<img class='switch' src="./images/cross.png" style="width:30px; margin-left:-44px; vertical-align:30px;"  onclick="switchPlace('toLeft');"/>
-						<img class='switch' src="./images/brosse.png" style="margin-left:-54px; vertical-align:-10px; height:32px; width:46px;" onclick="reset();"  /></td>
-					<td><select style="margin-left:30px;" id="rightTasks" class="select" size="6"></select></td>
+					<td><select style="margin-bottom:40px;" id="leftTasks" class="select" size="6"></select></td>
+					<td><img class='switch' src="./images/arrow.png" style="width:30px; vertical-align:90px; margin-left:40px;" onclick="switchPlace('toRight');" />
+						<img class='switch' src="./images/cross.png" style="width:30px; margin-left:-44px; vertical-align:50px;"  onclick="switchPlace('toLeft');"/>
+						<img class='switch' src="./images/brosse.png" style="margin-left:-54px; vertical-align:10px; height:32px; width:46px;" onclick="reset();"  /></td>
+					<td><select style="margin-left:30px; margin-bottom:40px;" id="rightTasks" class="select" size="6"></select></td>
 				</tr>
 				<tr>
-					<td colspan="3"><input class="valid" type='button' onclick="envoiPalier();" value="Valider" style=" margin-top:40px; margin-right:40px; margin-left:220px; width:100px;"/>
-									
-					</td>
+					<td colspan="3" ><b>Crit&egrave;res de passage au palier suivant:</b></td>
+				</tr>
+				<tr>
+					<td colspan="3">1) R&eacute;alisation d'un nombre minimum de: <input style="margin-right:5px; margin-left:5px;" id="nombreSessions" name="nombreSessions" type="text" size="2" /> sessions</td>
+				</tr>
+				<tr>
+					<td colspan="3">2) Taux de bonnes r&eacute;ponses > ou = &agrave; <input style="margin-right:5px; margin-left:5px;" id="tauxreponse1" name="tauxreponse1" type="text" size="2" /> % concernant les <input style="margin-right:5px; margin-left:5px;" id="nombreDerSessions" name="nombreDerSessions" type="text" size="2" /> derni&egrave;res sessions</td>
+				</tr>
+				<tr>
+					<td colspan="3">3) Taux de bonnes r&eacute;ponses > ou = &agrave; <input style="margin-right:5px; margin-left:5px;" id="tauxreponse2" name="tauxreponse2" type="text" size="2" /> % concernant les <input style="margin-right:5px; margin-left:5px;" id="nombreDerTaches" name="nombreDerTaches" type="text" size="2" /> derni&egrave;res t&acirc;ches</td>
+				</tr>
+				<tr>
+					<td colspan="3"><input class="valid" type='button' onclick="envoiPalier();" value="Valider" style=" margin-top:40px; margin-right:40px; margin-left:220px; width:100px;"/></td>
 				</tr>
 			</table>
 			

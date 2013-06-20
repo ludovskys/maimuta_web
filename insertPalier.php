@@ -30,7 +30,22 @@
 				$rs = $conn->execute($query);
 			}
 			
+			// selection de l'id du dernier palier
+			$query = "SELECT MAX(id_palier) FROM CPS_Paliers"; 
+			$rs = $conn->execute($query); 
+			while(!$rs->EOF)
+			{ 
+				$idDerPalier = $rs->Fields(0)->value;
+				$rs->MoveNext();
+			}
 
+			echo $idDerPalier;
+			
+			// insertion des paramètres de passages du palier créé
+			$query = "INSERT INTO CPS_Criteres_Passage_Paliers (id_palier, nb_min_sessions, z_pourcentage, z_last_sessions, y_pourcentage, y_last_tasks) values (".$idDerPalier.", '".$_POST['nombreSessions']."', '".$_POST['tauxreponse1']."', '".$_POST['nombreDerSessions']."', '".$_POST['tauxreponse2']."', '".$_POST['nombreDerTaches']."')";
+			$rs = $conn->execute($query);
+			
+		
 			$conn->Close();
 			
 		}

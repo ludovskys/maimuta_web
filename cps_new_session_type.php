@@ -17,6 +17,19 @@
 			<div class="box">
 				<form id ="formSessionType" method="post" action="c_sessions_types.php">
 					<label for="inputTextSessionTypeName">Nom de la session type : </label><input id="inputTextSessionTypeName" type="text" name="sessionTypeName"></br></br>
+					<b>Crit&egrave;res de la session type:</b></br></br>
+					<div style="margin-bottom:7px;"><label for="punition">Choisir le d&eacute;lais d'affichage de l'&eacute;cran blanc : </label><input id="punition" type="text" name="punition" size="2" > secondes</div>
+					<div style="margin-bottom:7px;"><label for="ratio">Choisir le ratio de r&eacute;compense : </label><input id="ratio" type="text" name="ratio" size="2"></div>
+					<div style="margin-bottom:7px;"><label for="nbEssai">Choisir le nombre d'essais non r&eacute;compens&eacute;s cons&eacute;cutifs : </label><input id="nbEssai" type="text" name="nbEssai" size="2"></div>
+					<div style="margin-bottom:20px;"><label for="tacheDemotiv">Choisir la t&acirc;che de lutte contre le d&eacute;motivation : </label><select id="tacheDemotiv" name="tacheDemotiv">
+					<?php
+						for($i=0; $i<count($listeTask['id_tache']); $i++)
+						{
+							echo "<option value=".$listeTask['id_tache'][$i].">".$listeTask['nom_tache'][$i]."</option>";
+						}
+					?>
+					</select></div>
+					<b>T&acirc;ches de la session type:</b></br>
 					<input id="buttonAddTasks" type="button" value="+">
 					<input id="hiddenCompteur" type="hidden" name="hiddenCompteur">
 					<select id="selectTasks1" name="selectTasks1" style="margin-left:20px; margin-right:31px; margin-bottom:20px;">
